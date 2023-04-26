@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Waste Management</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Dancing+Script:wght@400;500&family=Fasthand&family=Josefin+Sans:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@300;400;500;600;700;800;900&family=Satisfy&family=Urbanist:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+            list-style: none;
+            outline: 0;
+            font-family: 'Urbanist', sans-serif;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #FAFFFB;
+            font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden !important;
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: #2d8d4b;
+        }
+
+        .item a {
+            text-decoration: none;
+            color: grey;
+        }
+
+        .item a:hover {
+            color: #2d8d4b;
+        }
+
+        header {
+            width: 100vw;
+            background-color: white;
+            height: 100px;
+            box-shadow: 0px 3px 8px rgba(0, 0, 0, 25%);
+            display: flex;
+            align-items: center;
+        }
+
+        header .container-fluid {
+            width: 98%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 60px;
+        }
+
+        header .navb-items {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            letter-spacing: 2px;
+        }
+
+        header .item {
+            text-align: center;
+            margin-inline: 5%;
+            color: #2d8d4b;
+            padding: 3px 0;
+            transition: all .1s ease;
+            cursor: pointer;
+            align-items: center;
+            letter-spacing: 2px;
+        }
+
+        header .item:hover {
+            border-bottom: 3px solid #2d8d4b;
+            border-top: 3px solid #2d8d4b;
+        }
+
+        header .item-button a {
+            background-color: #2d8d4b;
+            width: 150px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 16px;
+            font-weight: 600;
+            color: white;
+        }
+
+        header .item-button a:hover {
+            background-color: white;
+            color: #2d8d4b;
+            border: 1px solid #2d8d4b;
+
+
+        }
+
+        .main {
+            background-image: url("back.jpg");
+            height: 70vh;
+            width: 100vw;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .main h1 span {
+            color: white;
+            ;
+            font-size: 5.5rem;
+
+        }
+
+        .main .content-auto {
+            text-align: center;
+            padding-top: 12.2rem;
+            padding-right: 28rem;
+        }
+
+        #about-head img {
+            height: auto;
+            width: 150%;
+        }
+
+        #about-head {
+            display: flex;
+            align-items: center;
+        }
+
+        #about-head div {
+            padding-left: 30px;
+        }
+
+        #about-head h1 {
+            text-align: center;
+        }
+
+        #about-head p {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+
+        .section-p1 {
+            padding: 50px 80px;
+        }
+
+        .section-m1 {
+            padding: 30px 10px;
+        }
+
+        marquee {
+            color: white;
+            height: 25px;
+            font-size: 20px;
+        }
+
+        .category {
+            background-color: #219150;
+        }
+
+        .heading {
+            color: white;
+            text-align: center;
+            padding-bottom: 10px;
+        }
+
+        .category .box-container {
+            display: -ms-grid;
+            display: grid;
+            -ms-grid-columns: (minmax(29rem, 1fr))[auto-fit];
+            grid-template-columns: repeat(auto-fit, minmax(29rem, 1fr));
+            gap: 1.5rem;
+        }
+
+
+        .category .box-container .box {
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .category .box-container .box img {
+            height: 14rem;
+            width: 14rem;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+        }
+
+        .category .box-container .box h3 {
+            font-size: 2rem;
+            color: white;
+        }
+
+
+
+        .pb-6 {
+            padding-bottom: 1.5rem;
+        }
+
+        .gap-x-4 {
+            -moz-column-gap: 1rem;
+            column-gap: 1rem;
+        }
+
+        .justify-center {
+            justify-content: center;
+        }
+
+        .flex-wrap {
+            flex-wrap: wrap;
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .mt-10 {
+            margin-top: 2.5rem;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .py-6 {
+            padding-bottom: 1.5rem;
+            padding-top: 1.5rem;
+        }
+
+        .border-custom-green-text {
+            --tw-border-opacity: 1;
+
+        }
+
+        .border {
+            border-width: 1px;
+            border-color: #219150;
+        }
+
+        .rounded {
+            border-radius: 0.25rem;
+        }
+
+        .mt-5 {
+            margin-top: 1.25rem;
+        }
+
+        #contact {
+            background-color: #219150;
+        }
+
+        .contact form {
+            max-width: 70rem;
+            margin: 0rem auto;
+            text-align: center;
+
+        }
+
+        .contact form .inputBox {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .contact form .inputBox input,
+        .contact form textarea {
+            width: 100%;
+            border-radius: .5rem;
+            padding: 1rem;
+            margin: .7rem 0;
+            font-size: 1.5rem;
+            color: #219150;
+            text-transform: none;
+        }
+
+        .contact form .inputBox input::placeholder,
+        .contact form textarea::placeholder {
+            color: #219150;
+            text-transform: capitalize;
+        }
+
+        .contact form .inputBox input {
+            width: 49%;
+        }
+
+        .contact form textarea {
+            resize: none;
+        }
+
+        .btn {
+            margin-top: 1rem;
+            display: inline-block;
+            padding: .8rem 3rem;
+            font-size: 1.7rem;
+            border-radius: .5rem;
+            background: white;
+            color: #219150;
+            cursor: pointer;
+            font-weight: 600;
+            margin-bottom: 2rem;
+
+        }
+
+        .credit {
+            text-align: center;
+            color: #219150;
+            padding: 2rem;
+            font-size: 1rem;
+            background-color: white;
+            font-weight: bolder;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container-fluid">
+            <div class="navb-logo">
+                <a href="index.html"><img src="images/newlogo.PNG" class="img-responsive" alt="logo"></a>
+            </div>
+            <div class="navb-items ">
+                <div class="item">
+                    <a href="index.html">Home</a>
+                </div>
+                <div class="item">
+                    <a href="#about-head">AboutUs</a>
+                </div>
+                <div class="item">
+                    <a href="#services">Services</a>
+                </div>
+                <div class="item">
+                    <a href="#products">Products</a>
+                </div>
+                <div class="item-button">
+                    <a href="#contact" type="button">Contact Us</a>
+                </div>
+            </div>
+        </div>
+
+        </div>
+    </header>
+    <section class="main">
+        <div class="content-auto">
+            <h1><span class="auto-type"></span></h1>
+        </div>
+    </section>
+    <section id="about-head" class="section-p1">
+        <img src="about.png" alt="">
+        <div>
+            <h1>About us</h1>
+            <p>We understand that e-waste is a growing concern for individuals, businesses, and the environment, and we
+                are committed to providing safe and reliable solutions for disposing of electronic devices.
+
+                Our team of experts has extensive knowledge and experience in the e-waste industry, and we are dedicated
+                to promoting sustainable practices that protect our planet and its resources.
+
+                We offer a wide range of services, including e-waste collection, secure data destruction, and
+                environmentally-friendly recycling options. Our processes adhere to strict regulations and guidelines
+                set forth by local and national authorities, ensuring that your e-waste is handled responsibly and
+                ethically.
+
+                At our core, we believe that by working together, we can make a positive impact on our planet and the
+                communities we serve. </p>
+
+            <br><br>
+            <marquee bgcolor="#2d8d4b" loop="-1" scrollamount="5" width="100%">Reuse the plastic, act locally, do
+                something exciting.
+            </marquee>
+        </div>
+    </section>
+    <section class="category section-m1" id="services">
+
+        <h1 class="heading">Services</h1>
+
+        <div class="box-container">
+
+            <div class="box">
+                <img src="1.jpg" alt="">
+                <h3>Electric and Electronic Recycling</h3>
+            </div>
+
+            <div class="box">
+                <img src="2.png" alt="">
+                <h3>Data destruction</h3>
+            </div>
+
+            <div class="box">
+                <img src="3.webp" alt="">
+                <h3>Reverse logistics</h3>
+
+            </div>
+        </div>
+
+    </section>
+
+    <section id="products" class="mt-24 px-6 md:px-12 lg:px-20 section-p1">
+        <h2 class="font-Mont font-semibold leading-6 text-xl text-heading-black text-center sm:text-xl1 lg:leading-8 lg:text-3xl"
+            style="color: #219150;">
+            Different E-waste categories you can buy
+        </h2>
+        <div class="mt-2.5 text-heading-black text-sm font-semibold leading-5 text-center lg:text-base"
+            style="color: #219150;">
+            We cover all types of e wastes, below are few of many e-wastes that we can help you purchase
+        </div>
+        <div class="mt-10 flex flex-wrap gap-x-4 pb-6 justify-center consultantTypesWrapper">
+            <div style="width: 156px" class="border border-custom-green-text rounded text-center py-6 mt-5">
+                <img alt="computers and laptop icon" class="inline-block"
+                    src="https://www.mywastesolution.com/images/svg_icons/e-waste/computer.svg" style="height: 40px">
+                <div class="text-center mt-1 font-semibold leading-5 text-sm text-heading-black">
+                    Computers &amp;<br> laptops
+                </div>
+            </div>
+            <div style="width: 156px" class="border border-custom-green-text rounded text-center py-6 mt-5">
+                <img alt="monitors and keyboard icon" class="inline-block"
+                    src="https://www.mywastesolution.com/images/svg_icons/e-waste/keyboard.svg" style="height: 40px">
+                <div class="text-center mt-1 font-semibold leading-5 text-sm text-heading-black">
+                    Monitors and keyboards
+                </div>
+            </div>
+            <div style="width: 156px" class="border border-custom-green-text rounded text-center py-6 mt-5">
+                <img alt="smartphones icon" class="inline-block"
+                    src="https://www.mywastesolution.com/images/svg_icons/e-waste/mobile.svg" style="height: 40px">
+                <div class="text-center mt-1 font-semibold leading-5 text-sm text-heading-black">
+                    Smartphones
+                </div>
+            </div>
+            <div style="width: 156px" class="border border-custom-green-text rounded text-center py-6 mt-5 ">
+                <img alt="printers and scanners icon" class="inline-block"
+                    src="https://www.mywastesolution.com/images/svg_icons/e-waste/printer.svg" style="height: 40px">
+                <div class="text-center mt-1 font-semibold leading-5 text-sm text-heading-black relative top-2">
+                    Printers &amp;<br> scanners
+                </div>
+            </div>
+            <div style="width: 156px" class="border border-custom-green-text rounded text-center py-6 mt-5 ">
+                <img alt="servers icon" class="inline-block"
+                    src="https://www.mywastesolution.com/images/svg_icons/e-waste/server.svg" style="height: 40px">
+                <div class="text-center mt-1 font-semibold leading-5 text-sm text-heading-black relative top-2">
+                    Servers
+                </div>
+            </div>
+            <div style="width: 156px" class="border border-custom-green-text rounded text-center py-6 mt-5">
+                <img alt="telecom instruments icon" class="inline-block"
+                    src="https://www.mywastesolution.com/images/svg_icons/e-waste/telecom.svg" style="height: 40px">
+                <div class="text-center mt-1 font-semibold leading-5 text-sm text-heading-black">
+                    Telecom Instruments
+                </div>
+            </div>
+            <div style="width: 156px" class="border border-custom-green-text rounded text-center py-6 mt-5">
+                <img alt="cables icon" class="inline-block"
+                    src="https://www.mywastesolution.com/images/svg_icons/e-waste/cables.svg" style="height: 40px">
+                <div class="text-center mt-1 font-semibold leading-5 text-sm text-heading-black">
+                    Cables
+                </div>
+            </div>
+
+            <div style="width: 156px" class="border border-custom-green-text rounded text-center py-6 mt-5">
+                <img alt="batteries icon" class="inline-block"
+                    src="https://www.mywastesolution.com/images/svg_icons/e-waste/battery.svg" style="height: 40px">
+                <div class="text-center mt-1 font-semibold leading-5 text-sm text-heading-black">
+                    Batteries
+                </div>
+            </div>
+            <div style="width: 156px" class="border border-custom-green-text rounded text-center py-6 mt-5">
+                <img alt="routers icon" class="inline-block"
+                    src="https://www.mywastesolution.com/images/svg_icons/e-waste/router.svg" style="height: 40px">
+                <div class="text-center mt-1 font-semibold leading-5 text-sm text-heading-black">
+                    Routers
+                </div>
+            </div>
+            <div style="width: 156px" class="border border-custom-green-text rounded text-center py-6 mt-5">
+                <img alt="consumer appliances icon" class="inline-block"
+                    src="https://www.mywastesolution.com/images/svg_icons/e-waste/consumer-appliance.svg"
+                    style="height: 40px">
+                <div class="text-center mt-1 font-semibold leading-5 text-sm text-heading-black">
+                    Consumer<br> Appliances
+                </div>
+            </div>
+            <div style="width: 156px" class="border border-custom-green-text rounded text-center py-6 mt-5">
+                <img alt="industrial e waste icon" class="inline-block"
+                    src="https://www.mywastesolution.com/images/svg_icons/e-waste/industrial-e-waste.svg"
+                    style="height: 40px">
+                <div class="text-center mt-1 font-semibold leading-5 text-sm text-heading-black">
+                    Industrial<br> e-waste
+                </div>
+            </div>
+            <div style="width: 156px" class="border border-custom-green-text rounded text-center py-6 mt-5">
+                <img alt="electrical machinery icon" class="inline-block"
+                    src="https://www.mywastesolution.com/images/svg_icons/e-waste/electrical-machinery.svg"
+                    style="height: 40px">
+                <div class="text-center mt-1 font-semibold leading-5 text-sm text-heading-black">
+                    Electrical<br> machinery
+                </div>
+            </div>
+            <div style="width: 156px" class="border border-custom-green-text rounded text-center py-6 mt-5">
+                <img alt="industrial scrap icon" class="inline-block"
+                    src="https://www.mywastesolution.com/images/svg_icons/e-waste/industrial-scrap.svg"
+                    style="height: 40px">
+                <div class="text-center mt-1 font-semibold leading-5 text-sm text-heading-black">
+                    Industrial<br> scrap
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="contact" id="contact">
+
+        <h1 class="heading section-p1"> Contact us </h1>
+
+        <form action="connect.php" method="post">
+            <div class="inputBox">
+                <input type="text" placeholder="name" name="name" id="name">
+                <input type="email" placeholder="email" name="email" id="email">
+            </div>
+            <div class="inputBox">
+                <input type="text" placeholder="number" name="number" id="number">
+                <input type="text" placeholder="subject" name="subject" id="subject">
+            </div>
+            <textarea name="" placeholder="your message" id="message" cols="30" rows="10" name="message"></textarea>
+            <input type="submit" id="submit" value="send message" class="btn">
+        </form>
+    </section>
+    <div class="credit"> Website made with ❤ by Anisha Prajapati</div>
+    </section>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script>
+        var typed = new Typed(".auto-type", {
+            strings: ["", "Reduce", "Reuse", "Recycle"],
+            typeSpeed: 50,
+            backSpeed: 80,
+            loop: true,
+        });
+
+    </script>
+</body>
+
+</html>
